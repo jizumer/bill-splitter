@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# If a previous version of bill-splitter is running, stop it
+if pgrep bill-splitter > /dev/null; then
+    pkill bill-splitter
+    echo "Stopped running bill-splitter process"
+fi
+
+# If there is an old version of bill-splitter, remove it
 if [ -f bill-splitter ]; then
     rm bill-splitter
     echo "Removed old bill-splitter"
