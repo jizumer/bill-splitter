@@ -46,6 +46,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./executable
+        asset_path: ./bill-splitter
         asset_name: bill-splitter
         asset_content_type: application/octet-stream
