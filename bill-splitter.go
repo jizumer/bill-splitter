@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"log"
 	"os"
 	"time"
@@ -34,6 +35,16 @@ func main() {
 	b.Handle("/info", func(c tele.Context) error {
 		log.Println("/info command received")
 		return c.Send("App started at: " + startTime.String())
+	})
+
+	b.Handle("/balances", func(c tele.Context) error {
+		p := new(Person)
+		persons, err := p.FindAll()
+		if err != nil {
+			log.Println("Error: ", err)
+			return c.Send("Error: " + err.Error())
+		}
+		return c.Send(json.Marshal(persons))
 	})
 
 	b.Start()
