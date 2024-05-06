@@ -1,7 +1,7 @@
 package main
 
 import (
-	"encoding/json"
+	"fmt"
 	"log"
 	"os"
 	"time"
@@ -11,6 +11,10 @@ import (
 
 func main() {
 
+	startTime := time.Now()
+
+	SetupDatabase()
+
 	botToken := os.Getenv("TELEGRAM_BOT_TOKEN")
 	log.Println("Bot Token: ", botToken)
 
@@ -18,8 +22,6 @@ func main() {
 		Token:  botToken,
 		Poller: &tele.LongPoller{Timeout: 10 * time.Second},
 	}
-
-	startTime := time.Now()
 
 	b, err := tele.NewBot(pref)
 	if err != nil {
@@ -38,13 +40,14 @@ func main() {
 	})
 
 	b.Handle("/balances", func(c tele.Context) error {
+		log.Println("/balances command received")
 		p := new(Person)
 		persons, err := p.FindAll()
 		if err != nil {
 			log.Println("Error: ", err)
 			return c.Send("Error: " + err.Error())
 		}
-		return c.Send(json.Marshal(persons))
+		return c.Send(fmt.Sprintf("Balances: %v", persons))
 	})
 
 	b.Start()
