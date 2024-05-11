@@ -13,7 +13,7 @@ type Person struct {
 
 func (p *Person) FindAll() ([]Person, error) {
 
-	file, err := os.Open("persons.json")
+	file, err := os.Open("db/persons.json")
 	if err != nil {
 		return nil, err
 	}

@@ -22,3 +22,6 @@ go.work
 
 # direnv files
 .envrc
+
+# binary file
+bill-splitter

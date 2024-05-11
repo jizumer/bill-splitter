@@ -13,8 +13,6 @@ func main() {
 
 	startTime := time.Now()
 
-	SetupDatabase()
-
 	botToken := os.Getenv("TELEGRAM_BOT_TOKEN")
 	log.Println("Bot Token: ", botToken)
 
