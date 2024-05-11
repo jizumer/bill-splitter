@@ -1,26 +1,26 @@
 [
     {
         "name": "Tito",
-        "balance": 100
+        "balance": 24.37
     },
     {
-        "name": "Raechel",
-        "balance": 100
+        "name": "Raquel",
+        "balance": 1.87
     },
     {
         "name": "Daniel",
-        "balance": 100
+        "balance": 11.02
     },
     {
         "name": "JuanSenior",
-        "balance": 100
+        "balance": 14.38
     },
     {
         "name": "Korne",
-        "balance": 100
+        "balance": 19.87
     },
     {
-        "name": "JuanJr",
-        "balance": 100
+        "name": "JuanJunior",
+        "balance": -71.51
     }
 ]
