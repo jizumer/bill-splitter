@@ -1,0 +1,9 @@
+[
+    {
+        "name": "Spotify",
+        "amount": 9.99,
+        "initialPaymentDate": "2021-01-01",
+        "frequency": "monthly",
+        "lastPaymentDate": "2021-01-01"
+    }
+]
