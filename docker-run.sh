@@ -1,0 +1,3 @@
+#!/bin/bash
+docker build -t go-builder .
+docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp -e GOOS=linux -e GOARCH=arm go-builder go build -v -o bill-splitter ./...
